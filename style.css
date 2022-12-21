@@ -147,7 +147,7 @@ body {
   }
   .level-three{
     grid-template-columns: repeat(4, 1fr);
-    width: 700px;
+    width: 550px;
   }
 }
 
