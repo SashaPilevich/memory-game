@@ -45,9 +45,11 @@ body {
   position: relative;
   margin:10px;
   transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  background-color:#BE3455;
+  transform-style:preserve-3d;
+  transition: transform 0.3s;
+  
+  /* background:#BE3455; */
+  /* background-color: cadetblue; */
 }
 
 .card-wrapper:hover{
@@ -73,6 +75,13 @@ body {
 .back {
   transform: rotateY(180deg);
 }
+.front{
+  background-image: url('./assets/front.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color:#BE3455;
+}
 .card-memory-two{
   display: none;
 }
@@ -85,12 +94,8 @@ body {
   display: none;
   animation: win 3s linear 2;
   color:#BE3455;
-  
-
   margin-bottom: 50px;
   letter-spacing: 5px;
-  
-  /* translateY(-10%); */
 }
 @keyframes win {
 0% {
@@ -176,52 +181,3 @@ body {
   text-transform: uppercase;
 }
 
-/* @keyframes confetti-slow {
-  0%{
-    transform:translate3d(0,0,0) rotateX(0) rotateY(0)
-  }
-  100%{
-    transform:translate3d(25px,105vh,0) rotateX(360deg) rotateY(180deg)
-  }
-}
-@keyframes confetti-medium {
-  0%{
-    transform:translate3d(0,0,0) rotateX(0) rotateY(0)
-  }
-  100%{
-    transform:translate3d(100px,105vh,0) rotateX(100deg) rotateY(360deg)
-  }
-}
-@keyframes confetti-fast {
-  0%{
-    transform:translate3d(0,0,0) rotateX(0) rotateY(0)
-  }
-  100%{
-    transform:translate3d(-50px,105vh,0) rotateX(10deg) rotateY(250deg)
-  }
-}
-.confetti-container {
-  perspective: 700px;
-  position: absolute;
-  overflow: hidden;
-  top:0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 1000px;
-}
-.confetti{
-  position: relative;
-  z-index: 1;
-  top:-10px;
-  border-radius: 0;
-}
-.confetti-animation-slow{
-  animation: confetti-slow 2.25s linear 1 forwards;
-}
-.confetti-animation-medium{
-  animation: confetti-medium 1.75s linear 1 forwards;
-}
-.confetti-animation-fast{
-  animation: confetti-fast 1.25s linear 1 forwards;
-} */

@@ -3,8 +3,7 @@ import {
   cardsForLevelTwo,
   cardsForLevelThree,
 } from "./array.js";
-const root = document.getElementById("#root");
-const cards = document.querySelectorAll(".card-wrapper");
+
 let count = document.querySelector(".count");
 let title = document.querySelector(".title-level");
 let levelOne = document.querySelector(".level-one");
@@ -28,10 +27,10 @@ function createGame(array) {
     const back = document.createElement("img");
     back.className = "back";
     back.src = item.img;
-    const front = document.createElement("img");
+    const front = document.createElement("div");
     front.className = "front";
-    front.src = item.imgBack;
-    cardWrapper.append(back, front);
+    // front.src = item.imgBack;
+    cardWrapper.append(front,back);
     cardWrapper.addEventListener("click", flipCard);
     if (array.length === 16) {
       levelOne.append(cardWrapper);
@@ -49,7 +48,6 @@ function createGame(array) {
     let random = Math.floor(Math.random() * 28);
     cardWrapper.style.order = random;
   });
-  console.log(array.length);
 }
 
 let hasFlippedCard = false;
@@ -57,28 +55,24 @@ let firstCard;
 let secondCard;
 let lockBoard = false;
 let score = 0;
-let interval;
 let isLevelOne = true;
 let isLevelTwo = false;
-let isLevelThree = false;
 
-function flipCard() {
+
+function flipCard(event) {
+  
   if (lockBoard) return;
-  if (this === firstCard) return;
-  this.classList.add("flip");
+  if (event.target.closest(".card-wrapper") === firstCard) return;
+  event.target.closest(".card-wrapper").classList.add("flip");
   if (!hasFlippedCard) {
-    //first click
     hasFlippedCard = true;
-    firstCard = this;
-
+    firstCard = event.target.closest(".card-wrapper");
     return;
   } else {
-    //second click
     hasFlippedCard = false;
-    secondCard = this;
+    secondCard = event.target.closest(".card-wrapper");
 
     if (firstCard.dataset.image === secondCard.dataset.image) {
-      //it is match!!!
       score += 1;
       count.innerHTML = `Count: ${score}`;
       firstCard.removeEventListener("click", flipCard);
