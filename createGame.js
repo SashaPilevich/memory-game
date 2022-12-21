@@ -1,11 +1,9 @@
-
 import { flipCard } from "./flipCard.js";
 export let levelOne = document.querySelector(".level-one");
 export let levelTwo = document.querySelector(".level-two");
 export let levelThree = document.querySelector(".level-three");
 export let title = document.querySelector(".title-level");
 export let count = document.querySelector(".count");
-
 export let winner = document.querySelector(".winner");
 
 export function createGame(array){
@@ -27,13 +25,11 @@ export function createGame(array){
       levelTwo.append(cardWrapper);
       levelOne.style.display = "none";
       title.innerHTML = "Level : 2";
-      count.innerHTML = `Count: 0`;
     } else if (array.length === 28) {
       levelThree.append(cardWrapper);
       levelOne.style.display = "none";
       levelTwo.style.display = "none";
       title.innerHTML = "Level : 3";
-      count.innerHTML = `Count: 0`;
     }
     let random = Math.floor(Math.random() * 28);
     cardWrapper.style.order = random;

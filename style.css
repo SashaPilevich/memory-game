@@ -138,4 +138,16 @@ body {
   font-size: 24px;
   text-transform: uppercase;
 }
+@media(max-width:500px){
+  .level-one {
+    width: 400px;
+  }
+  .level-two{
+    width: 550px;
+  }
+  .level-three{
+    grid-template-columns: repeat(4, 1fr);
+    width: 700px;
+  }
+}
 
