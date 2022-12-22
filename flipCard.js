@@ -1,4 +1,4 @@
-import {count } from "./createGame.js";
+import {count} from "./createGame.js";
 import { checkWinOne, checkWinTwo, checkWinThree,isLevelOne, isLevelTwo, isLevelThree } from "./checkWin.js";
 
 
@@ -12,6 +12,8 @@ export function flipCard(event) {
   if (lockBoard) return;
   if (event.target.closest(".card-wrapper") === firstCard) return;
   event.target.closest(".card-wrapper").classList.add("flip");
+  
+  
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = event.target.closest(".card-wrapper");
@@ -19,7 +21,6 @@ export function flipCard(event) {
   } else {
     hasFlippedCard = false;
     secondCard = event.target.closest(".card-wrapper");
-
     if (firstCard.dataset.image === secondCard.dataset.image) {
       score += 1;
       count.innerHTML = `Count: ${score}`;

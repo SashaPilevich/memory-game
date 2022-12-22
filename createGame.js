@@ -21,6 +21,7 @@ export function createGame(array){
     if (array.length === 16) {
       levelOne.append(cardWrapper);
       title.innerHTML = "Level : 1";
+      count.innerHTML = 'Count:'
     } else if (array.length === 20) {
       levelTwo.append(cardWrapper);
       levelOne.style.display = "none";
