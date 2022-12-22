@@ -11,9 +11,10 @@ let cloneCardsLevelTwo = [...cardsForLevelTwo];
 export let cardsLevelTwo = cloneCardsLevelTwo.concat(cardsForLevelTwo);
 let cloneCardsLevelThree = [...cardsForLevelThree];
 export let cardsLevelThree = cloneCardsLevelThree.concat(cardsForLevelThree);
-
+const greeting = document.querySelector('.greeting')
 export const app = () => {
-  createGame(cardsLevelOne);
+setTimeout(() =>createGame(cardsLevelOne), 5000 )
+setTimeout(() =>greeting.style.display='none',4000)
 }
 
 
